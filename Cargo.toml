@@ -21,7 +21,7 @@ spin = "0.5.2"
 uart_16550 = "0.2.0"
 vga = "0.2.4"
 vga-figures = "0.2.0"
-x86_64 = "0.11.0"
+x86_64 = "0.13.1"
 
 [dependencies.lazy_static]
 version = "1.0"
