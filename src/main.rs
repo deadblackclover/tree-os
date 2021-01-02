@@ -6,6 +6,7 @@
 
 use core::panic::PanicInfo;
 use tree_os::serial_print;
+use tree_os::tree::congratulation;
 
 use vga::colors::Color16;
 use vga::writers::{Graphics640x480x16, GraphicsWriter};
@@ -19,7 +20,7 @@ pub extern "C" fn _start() -> ! {
 
     let figures = Figures2D::new(mode);
 
-    // TODO
+    congratulation(figures, Color16::White);
 
     #[cfg(test)]
     test_main();
