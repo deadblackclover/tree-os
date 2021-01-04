@@ -24,7 +24,7 @@ pub extern "C" fn _start() -> ! {
     let center_y = HEIGHT / 2;
 
     happy_new_year(&figures, Color16::White, center_x as usize, 10);
-    tree(&figures, Color16::Green, center_x, center_y - 100);
+    tree(&figures, center_x, center_y - 100);
 
     #[cfg(test)]
     test_main();
