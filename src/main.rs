@@ -6,7 +6,7 @@
 
 use core::panic::PanicInfo;
 use tree_os::serial_print;
-use tree_os::tree::{happy_new_year, tree, HEIGHT, WIDTH};
+use tree_os::tree::{happy_new_year, toy, tree, HEIGHT, WIDTH};
 
 use vga::colors::Color16;
 use vga::writers::{Graphics640x480x16, GraphicsWriter};
@@ -23,8 +23,13 @@ pub extern "C" fn _start() -> ! {
     let center_x = WIDTH / 2;
     let center_y = HEIGHT / 2;
 
-    happy_new_year(&figures, Color16::White, center_x as usize, 10);
+    happy_new_year(&figures, center_x as usize, 10, Color16::White);
     tree(&figures, center_x, center_y - 100);
+
+    toy(&figures, center_x - 50, center_y - 40, Color16::Red);
+    toy(&figures, center_x + 50, center_y - 40, Color16::Blue);
+    toy(&figures, center_x - 75, center_y + 10, Color16::Yellow);
+    toy(&figures, center_x + 75, center_y + 10, Color16::Cyan);
 
     #[cfg(test)]
     test_main();
